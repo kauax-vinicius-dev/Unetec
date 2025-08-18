@@ -133,13 +133,13 @@ main {
     font-size: 18px;
     font-family: var(--fonte-poppins);
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.3s ease;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 .button-nav:hover {
     background-color: var(--vermelho-escuro);
-    font-size: 19px;
+    font-size: 18.5px;
 }
 
 .quadro-tarefas {
@@ -181,7 +181,7 @@ main {
     border-radius: 15px;
     border: none;
     font-size: 15px;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.3s ease;
 }
 
 

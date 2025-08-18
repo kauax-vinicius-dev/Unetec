@@ -86,7 +86,7 @@ body {
     font-size: 17px;
     font-family: var(--fonte-poppins);
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.3s ease;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
 }
 
