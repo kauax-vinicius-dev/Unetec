@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/adminItaquera/formAvisos.css">
+    <title>Unetec</title>
+</head>
+
+<body>
+    <section class="section-form">
+        <div class="logo">
+            <h1><span class="letra-preta">UN</span><span class="letra-vermelha">ETEC</span></h1>
+        </div>
+        <p>Preencha as informaçoes do aviso</p>
+        <form id="form" method="post">
+            <input type="text" id="titulo" class="inputs" name="titulo" placeholder="Titulo do aviso" required>
+            <input type="text" id="descricao" class="inputs" name="descricao" placeholder="Descrição do aviso" required>
+            <input list="Urgencia" id="urgencia" class="inputs" name="urgencia" placeholder="Urgência do aviso"
+                required>
+            <datalist id="Urgencia">
+                <option value="Alta">
+                <option value="Media">
+                <option value="Baixa">
+            </datalist>
+            <input type="submit" value="Criar aviso" class="button-submit">
+        </form>
+    </section>
+    <script src="/js/adminItaquera/validaFormAvisos.js"></script>
+</body>
+
+</html>

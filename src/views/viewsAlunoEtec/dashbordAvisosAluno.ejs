@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/aluno/dashbordAviso.css">
+    <title>Unetec</title>
+</head>
+
+<body>
+    <main>
+        <section class="aba-padrao">
+            <div class="aba-box1">
+                <div class="logo">
+                    <h1><span class="letra-preta">UN</span><span class="letra-vermelha">ETEC</span></h1>
+                </div>
+                <div class="opcoes">
+                    <button id="button-agenda" class="style-button1"><img src="/imagens/agenda-icon.svg"
+                            alt="agenda-icon">Agenda</button>
+                    <button id="button-agenda" class="style-button1"><img src="/imagens/tarefa-icon.svg"
+                            alt="tarefa-icon">Tarefas</button>
+                    <button id="button-agenda" class="style-button1"><img src="/imagens/evento-icon.svg"
+                            alt="evento-icon">Eventos</button>
+                    <button id="button-agenda" class="style-button1"><img src="/imagens/canal-icon.svg"
+                            alt="canal-icon">&nbsp;&nbsp;Canal</button>
+                    <button id="button-agenda" class="style-button1"
+                        onclick="window.location.href='/dashbordAvisosAluno'"><img src="/imagens/aviso-icon.svg"
+                            alt="avisos-icon">&nbsp;&nbsp;Avisos</button>
+                </div>
+            </div>
+            <div class="aba-box2">
+                <button id="button-agenda" class="style-button1"><img src="/imagens/config-icon.svg"
+                        alt="config-icon">&nbsp;Config</button>
+                <button id="button-agenda" class="style-button1"><img src="/imagens/conta-icon.svg"
+                        alt="conta-icon">&nbsp;Conta</button>
+            </div>
+        </section>
+        <section class="dashbord">
+            <div class="nav-tarefas">
+                <h1>Avisos</h1>
+                <div class="opcoes-button">
+                    <button class="button-nav" onclick="filtraGeral()">Geral</button>
+                    <button class="button-nav" onclick="filtraUrgenciaBaixa()">Baixa urgência</button>
+                    <button class="button-nav" onclick="filtraUrgenciaMedia()">Média urgência</button>
+                    <button class="button-nav" onclick="filtraUrgenciaAlta()">Alta urgência</button>
+                </div>
+            </div>
+            <div class="quadro-tarefas">
+                <% avisos.forEach(aviso=> { %>
+                    <div class="aviso-item">
+                        <h2>
+                            <%= aviso.titulo %>
+                        </h2>
+
+                        <p><strong>Descrição:</strong>
+                            <%= aviso.descricao %>
+                        </p>
+
+                        <p><strong>Urgência:</strong>
+                            <%= aviso.urgencia %>
+                        </p>
+
+                        <p><strong>Criado em:</strong>
+                            <%= aviso.data.toLocaleDateString('pt-BR') %>
+                        </p>
+                    </div>
+                    <% }) %>
+            </div>
+        </section>
+
+    </main>
+    <script src="/js/alunoEtec/avisos.js"></script>
+</body>
+
+</html>
