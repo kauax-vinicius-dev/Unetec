@@ -20,14 +20,14 @@ export const authToken = (req, res, next) => {
 };
 
 export const authTokenAluno = (req, res, next) => {
-  const tokenAluno = req.cookies.tokenAluno
+  const authTokenAluno = req.cookies.authTokenAluno
 
-  if (!tokenAluno) {
+  if (!authTokenAluno) {
     return res.status(400).json({ mensagem: 'Token aluno nao existe' });
   }
 
   try {
-    const dados = jwt.verify(tokenAluno, process.env.JWT_SECRET_ALUNO);
+    const dados = jwt.verify(authTokenAluno, process.env.JWT_SECRET_ALUNO);
     req.user = dados;
     next();
   } catch (error) {
@@ -35,15 +35,15 @@ export const authTokenAluno = (req, res, next) => {
   }
 }
 
-export const tokenAdminEtec = (req, res, next)=>{
-  const tokenAdminEtec = req.cookies.tokenAdminEtec;
+export const authTokenAdmin = (req, res, next)=>{
+  const authTokenAdmin = req.cookies.authTokenAdmin;
 
-  if(!tokenAdminEtec){
+  if(!authTokenAdmin){
     return res.status(400).json({ mensagem: 'Token admin nao existe' });
   }
 
   try {
-    const dados = jwt.verify(tokenAdminEtec, process.env.JWT_SECRET_ADMIN);
+    const dados = jwt.verify(authTokenAdmin, process.env.JWT_SECRET_ADMIN);
     req.user = dados;
     next();
   } catch (error) {

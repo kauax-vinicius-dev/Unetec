@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         try {
-            const response = await fetch(`http://localhost:${port}/dashbordEtecAvisosAdmin/Form`, {
+            const response = await fetch(`http://localhost:${port}/dashbordAvisosAdmin/Form`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (response.ok) {
                 alert("Aviso criado com sucesso");
-                window.location.href = "/dashbordEtecAvisosAdmin";
+                window.location.href = "/dashbordAvisosAdmin";
             }
 
         } catch (error) {

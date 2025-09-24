@@ -1,7 +1,7 @@
 
 async function excluirAviso(id) {
     try {
-        const response = await fetch(`/dashbordEtecAvisosAdmin/Delete/${id}`, {
+        const response = await fetch(`dashbordAvisosAdmin/Delete/${id}`, {
             method: "Delete",
             headers: {
                 "Content-Type": "application/json"
@@ -14,7 +14,7 @@ async function excluirAviso(id) {
         }
 
         if (response.ok) {
-            window.location.href = "/dashbordEtecAvisosAdmin";
+            window.location.href = "/dashbordAvisosAdmin";
         }
 
     } catch (error) {

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/imagens/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/css/adminItaquera/dashbordAvisosModelo.css">
+    <link rel="stylesheet" href="/css/aluno/dashbordAviso.css">
     <title>Unetec</title>
 </head>
 
@@ -17,17 +17,14 @@
                     <h1><span class="letra-preta">UN</span><span class="letra-vermelha">ETEC</span></h1>
                 </div>
                 <div class="opcoes">
-                    <button id="button-agenda" class="style-button1"><img src="/imagens/agenda-icon.svg"
-                            alt="agenda-icon">Agenda</button>
-                    <button id="button-agenda" class="style-button1"><img src="/imagens/tarefa-icon.svg"
-                            alt="tarefa-icon">Tarefas</button>
-                    <button id="button-agenda" class="style-button1"><img src="/imagens/evento-icon.svg"
-                            alt="evento-icon">Eventos</button>
-                    <button id="button-agenda" class="style-button1"><img src="/imagens/canal-icon.svg"
-                            alt="canal-icon">&nbsp;&nbsp;Canal</button>
-                    <button id="button-agenda" class="style-button1"
-                        onclick="window.location.href='/dashbordEtecAvisos'"><img src="/imagens/aviso-icon.svg"
+                    <button id="button-avisos" class="style-button1"
+                        onclick="window.location.href='/dashbordAvisosAluno'"><img src="/imagens/aviso-icon.svg"
                             alt="avisos-icon">&nbsp;&nbsp;Avisos</button>
+                    <button id="button-home" class="style-button1" onclick="window.location.href='/dashbordAluno'"><img
+                            src="/imagens/home-icon.svg" alt="avisos-icon">&nbsp;&nbsp;Home</button>
+                    <button id="button-cardapio" class="style-button1"
+                        onclick="window.location.href='/dashbordCardapioAluno'"><img src="/imagens/cardapio-icon.svg"
+                            alt="avisos-icon">&nbsp;&nbsp;Cardápio</button>
                 </div>
             </div>
             <div class="aba-box2">
@@ -40,8 +37,12 @@
         <section class="dashbord">
             <div class="nav-tarefas">
                 <h1>Avisos</h1>
-                <button class="button-nav" onclick="window.location.href='/dashbordEtecAvisosAdmin/Form'">Criar
-                    Avisos</button>
+                <div class="opcoes-button">
+                    <button class="button-nav" id="button-geral" onclick="filtraAvisos('geral')">Geral</button>
+                    <button class="button-nav" id="button-baixa" onclick="filtraAvisos('baixa')">Baixa urgência</button>
+                    <button class="button-nav" id="button-media" onclick="filtraAvisos('media')">Média urgência</button>
+                    <button class="button-nav" id="button-alta" onclick="filtraAvisos('alta')">Alta urgência</button>
+                </div>
             </div>
             <div class="quadro-tarefas">
                 <% avisos.forEach(aviso=> { %>
@@ -61,15 +62,13 @@
                         <p><strong>Criado em:</strong>
                             <%= aviso.data.toLocaleDateString('pt-BR') %>
                         </p>
-                        <button class="button-excluir" onclick="excluirAviso('<%= aviso._id %>')">Excluir aviso</button>
-
                     </div>
                     <% }) %>
             </div>
         </section>
 
     </main>
-    <script src="/js/adminItaquera/avisos.js"></script>
+    <script src="/js/aluno/avisos.js"></script>
 </body>
 
 </html>

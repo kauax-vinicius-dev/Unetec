@@ -1,7 +1,7 @@
-import { Aviso } from '../../models/Aviso.js'
+import { Aviso } from '../models/AvisoModel.js'
 
 export class AvisosService {
-    static async criaTarefa({ titulo, descricao, data, urgencia }) {
+    static async criaTarefa({ titulo, descricao, urgencia }) {
 
         if (titulo.length < 5) {
             alert("Ocorreu um erro na validacão dos campos,tente novamente.");

@@ -5,23 +5,23 @@ export class AuthController {
     static async postLogin(req, res) {
         try {
             const { email, senha } = req.body;
-            const { token, escolaridade, tokenAdminEtec, tokenAluno } = await AuthService.validLogin({ email, senha });
+            const { token, escolaridade, authTokenAdmin, authTokenAluno } = await AuthService.validLogin({ email, senha });
             res.cookie("token", token, {
                 httpOnly: true,
                 secure: false,
                 sameSite: "strict",
             });
 
-            if (tokenAdminEtec) {
-                res.cookie("tokenAdminEtec", tokenAdminEtec, {
+            if (authTokenAdmin) {
+                res.cookie("authTokenAdmin", authTokenAdmin, {
                     httpOnly: true,
                     secure: false,
                     sameSite: "strict",
                 });
             }
 
-            if (tokenAluno) {
-                res.cookie("tokenAluno", tokenAluno, {
+            if (authTokenAluno) {
+                res.cookie("authTokenAluno", authTokenAluno, {
                     httpOnly: true,
                     secure: false,
                     sameSite: "strict",
@@ -31,11 +31,11 @@ export class AuthController {
             let redirectUrl;
 
             if (escolaridade === "Aluno Etec Itaquera") {
-                redirectUrl = '/dashbordEtecAluno';
+                redirectUrl = '/dashbordAluno';
             }
 
             if (escolaridade === "Admin Etec Itaquera") {
-                redirectUrl = '/dashbordEtecAdmin';
+                redirectUrl = '/dashbordAdmin';
             }
 
             res.status(200).json({ msg: 'Login concluído com sucesso', redirectUrl });

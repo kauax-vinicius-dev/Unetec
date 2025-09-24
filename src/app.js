@@ -2,10 +2,11 @@
 import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
-import rota from './routes/router.js';
-import conectarMongo from './config/config.js';
+import publicRoutes from './routes/publicRoutes.js';
+import adminRoutes from './routes/adminRoutes.js';
+import alunoRoutes from './routes/alunoRoutes.js';
+import conectarMongo from './config/dbConfig.js';
 import path from 'path';
-import jwt from 'jsonwebtoken';
 import cookieParser from 'cookie-parser';
 
 
@@ -34,7 +35,9 @@ app.use(cors());
 app.use(cookieParser());
 
 // Usando as rotas
-app.use(rota);
+app.use(publicRoutes);
+app.use(adminRoutes);
+app.use(alunoRoutes);
 
 // Iniciando o servidor
 app.listen(port, () => {

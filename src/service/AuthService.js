@@ -1,13 +1,14 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import User from '../models/User.js';
+import User from '../models/UserModel.js';
 import validator from 'validator';
+import { authTokenAdmin, authTokenAluno } from '../middlewares/checkAuthenticated.js';
 
 export class AuthService {
     static async validLogin({ email, senha }) {
 
-        let tokenAluno = null;
-        let tokenAdminEtec = null;
+        let authTokenAluno = null;
+        let authTokenAdmin = null;
 
         if (!validator.isEmail(email)) {
             throw { status: 422, msg: 'Email inválido' };
@@ -30,18 +31,18 @@ export class AuthService {
         }
 
         if(user.escolaridade === "Aluno Etec Itaquera"){
-             tokenAluno = jwt.sign({id: user._id}, process.env.JWT_SECRET_ALUNO, { expiresIn: '6h'});
+             authTokenAluno = jwt.sign({id: user._id}, process.env.JWT_SECRET_ALUNO, { expiresIn: '6h'});
         }
 
          if(user.escolaridade === "Admin Etec Itaquera"){
-            tokenAdminEtec = jwt.sign({id: user._id}, process.env.JWT_SECRET_ADMIN, { expiresIn: '6h'});
+            authTokenAdmin = jwt.sign({id: user._id}, process.env.JWT_SECRET_ADMIN, { expiresIn: '6h'});
         }
 
         const escolaridade = user.escolaridade;
 
         
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '6h' });
-        return { token, escolaridade, tokenAdminEtec, tokenAluno};
+        return { token, escolaridade, authTokenAdmin, authTokenAluno};
     }
 
     static async validRegister({ nome, email, escolaridade, senha, senhaCopy }) {

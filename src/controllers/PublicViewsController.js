@@ -20,17 +20,4 @@ export class ViewsController {
     res.status(200).render("register");
   }
 
-  static renderDashbordEtecAdmin(req, res) {
-    res.status(200).render("viewsAdminEtec/dashbordEtecAdmin");
-  }
-
-  static renderDashbordEtecAluno(req, res) {
-    res.status(200).render("viewsAlunoEtec/dashbordEtecAluno");
-  }
-
-
-  static renderFormAvisos(req, res) {
-    res.status(200).render("viewsAdminEtec/formAvisos");
-  }
-
 }
