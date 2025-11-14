@@ -13,12 +13,20 @@ adminRoutes.get("/dashbordAvisosAdmin", authToken, authTokenAdmin, AvisosAdminCo
 adminRoutes.get("/dashbordAvisosAdmin/Form", authToken, authTokenAdmin, viewsAdminController.renderFormAvisosAdmin);
 adminRoutes.get("/dashbordCardapioAdmin", authToken, authTokenAdmin, CardapioAdminController.renderCardapio);
 adminRoutes.get("/dashbordCardapioAdmin/Form", authToken, authTokenAdmin, CardapioAdminController.renderFormCardapio);
+adminRoutes.get("/dashbordCardapio/Form/Edit", authToken, authTokenAdmin, CardapioAdminController.renderFormEditCardapio);
+adminRoutes.get("/dashbordContaAdmin",authToken, authTokenAdmin, viewsAdminController.renderDashbordConta);
 
 //Post routers
 adminRoutes.post("/dashbordAvisosAdmin/Form", authToken, authTokenAdmin, AvisosAdminController.criaAvisos);
 adminRoutes.post("/dashbordCardapioAdmin/Form", authToken, authTokenAdmin, CardapioAdminController.criaCardapio);
+adminRoutes.post("/dashbordCardapio/Form/Edit", authToken, authTokenAdmin, CardapioAdminController.editarCardapio);
+adminRoutes.post("/dashbordContaAdmin",authToken, authTokenAdmin, viewsAdminController.logout);
+
+
+
 
 //Delet routers
 adminRoutes.delete("/dashbordAvisosAdmin/Delete/:id", authToken, authTokenAdmin, AvisosAdminController.excluirAvisos);
+adminRoutes.delete("/dashbordCardapioAdmin/Delete/:id", authToken, authTokenAdmin, CardapioAdminController.excluiCardapio);
 
 export default adminRoutes;

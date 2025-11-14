@@ -30,19 +30,19 @@ export class AuthService {
             throw { status: 442, msg: 'Senha incorreta' };
         }
 
-        if(user.escolaridade === "Aluno Etec Itaquera"){
-             authTokenAluno = jwt.sign({id: user._id}, process.env.JWT_SECRET_ALUNO, { expiresIn: '6h'});
+        if (user.escolaridade === "Aluno Etec Itaquera") {
+            authTokenAluno = jwt.sign({ id: user._id }, process.env.JWT_SECRET_ALUNO, { expiresIn: '6h' });
         }
 
-         if(user.escolaridade === "Admin Etec Itaquera"){
-            authTokenAdmin = jwt.sign({id: user._id}, process.env.JWT_SECRET_ADMIN, { expiresIn: '6h'});
+        if (user.escolaridade === "Admin Etec Itaquera") {
+            authTokenAdmin = jwt.sign({ id: user._id }, process.env.JWT_SECRET_ADMIN, { expiresIn: '6h' });
         }
 
         const escolaridade = user.escolaridade;
 
-        
+
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '6h' });
-        return { token, escolaridade, authTokenAdmin, authTokenAluno};
+        return { token, escolaridade, authTokenAdmin, authTokenAluno, email };
     }
 
     static async validRegister({ nome, email, escolaridade, senha, senhaCopy }) {
@@ -92,5 +92,12 @@ export class AuthService {
         await user.save();
 
     }
+
+    static logout(res) {
+        res.clearCookie("token");
+        res.clearCookie("authTokenAluno");
+        res.clearCookie("authTokenAdmin");
+    }
+
 };
 

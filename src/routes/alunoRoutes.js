@@ -11,6 +11,12 @@ const alunoRoutes = Router();
 alunoRoutes.get("/dashbordAluno", authToken, authTokenAluno, viewsAlunoController.renderDashbordAluno);
 alunoRoutes.get("/dashbordAvisosAluno", authToken, authTokenAluno, AvisoAlunoController.renderAvisos);
 alunoRoutes.get("/dashbordCardapioAluno", authToken, authTokenAluno, CardapioAlunoController.renderCardapioAluno);
+alunoRoutes.get("/dashbordCardapioAluno/formAlmoco", authToken, authTokenAluno, CardapioAlunoController.renderFormAlmoco);
+alunoRoutes.get("/dashbordConta", authToken, authTokenAluno, viewsAlunoController.renderDashborConta);
 
+//POST routers
+alunoRoutes.post("/dashbordCardapioAluno/formAlmoco", authToken, authTokenAluno, CardapioAlunoController.quantidadeMerenda);
+alunoRoutes.post("/dashbordConta", authToken, authTokenAluno, viewsAlunoController.logout);
+ 
 
 export default alunoRoutes;

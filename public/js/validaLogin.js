@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         alert(data.msg || "Erro ao fazer login.");
         return;
       }
+      localStorage.setItem("email", data.email);
 
       alert("Login realizado com sucesso!");
       if (data.redirectUrl) {

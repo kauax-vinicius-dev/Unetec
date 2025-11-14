@@ -1,13 +1,13 @@
 
 async function excluirAviso(id) {
     try {
-        const response = await fetch(`dashbordAvisosAdmin/Delete/${id}`, {
-            method: "Delete",
+        const response = await fetch(`/dashbordAvisosAdmin/Delete/${id}`, {
+            method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
             }
         });
-
+ 
 
         if (!response.ok) {
             alert("Erro ao excluir aviso");

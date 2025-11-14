@@ -6,7 +6,11 @@ export class CardapioAdminController {
         res.status(200).render("adminViews/dashbordCardapioAdmin", { cardapio });
     }
     static renderFormCardapio(req, res) {
-        res.status(200).render("adminViews/formCardapioAdmin")
+        res.status(200).render("adminViews/formCardapioAdmin");
+    }
+
+    static renderFormEditCardapio(req, res){
+        res.status(200).render("adminViews/formEditCardapioAdmin");
     }
 
     static async criaCardapio(req, res) {
@@ -19,4 +23,27 @@ export class CardapioAdminController {
             console.log(error);
         }
     }
+
+    static async excluiCardapio(req, res) {
+        try {
+            const { id } = req.params;
+            await CardapioService.excluiCardapio(id);
+            res.status(200).json({ message: "Cardapio excluido com sucesso" });
+        } catch (error) {
+            console.error("Erro ao carregar cardapio:", error);
+            res.status(500).send("Erro ao excluir cardapio");
+        }
+    }
+
+    static async editarCardapio(req, res) {
+        try {
+            const { id, campoEscolhido, alteracaoCampoEscolhido } = req.body;
+            await CardapioService.editaCardapio(id, campoEscolhido, alteracaoCampoEscolhido);
+        } catch (error) {
+            console.error("Erro a editar cardapio:", error);
+            res.status(500).send("Erro a editar cardapio");
+    }
+
+
+}
 }

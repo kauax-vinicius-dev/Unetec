@@ -31,12 +31,44 @@ export class CardapioService {
         return await Cardapio.findByIdAndDelete(id);
     }
 
-    static async editaCardapio(id, campoAlterado, alteracao) {
+    static async editaCardapio(id, campoEscolhido, alteracaoCampo) {
         return await Cardapio.updateOne(
             { _id: id },
-            { $set: { [campoAlterado]: alteracao } }
+            { $set: { [campoEscolhido]: alteracaoCampo } }
         )
     }
 
+    static async quantidadeMerenda(opcao, horario) {
+        if (opcao != "Sim" && opcao != "Não") {
+            return;
+        }
 
+        if (opcao === "Não") {
+            return;
+        }
+
+        if (horario != "Manhã" && horario != "Tarde" && horario != "Noite") {
+            return;
+        }
+
+        if (opcao === "Sim" && horario === "Manhã") {
+            return await Cardapio.updateOne(
+                {},
+                { $inc: {quantidadeManha: 1 } }
+            )
+        }
+
+        if (opcao === "Sim" && horario === "Tarde") {
+            return await Cardapio.updateOne(
+                {},
+                { $inc: { quantidadeTarde: 1 } }
+            )
+        }
+        if (opcao === "Sim" && horario === "Noite") {
+            return await Cardapio.updateOne(
+                {},
+                { $inc: { quantidadeNoite: 1 } }
+            )
+        }
+    }
 } 

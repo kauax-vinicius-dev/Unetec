@@ -31,7 +31,7 @@ export class AvisosAdminController {
             res.status(200).json({ message: "Aviso excluído com sucesso!" });
         } catch (error) {
             console.error("Erro ao carregar avisos:", error);
-            res.status(500).send("Erro ao excluir aviso");
+            res.status(500).json({ message: "Erro ao excluir aviso" });
         }
     }
 }

@@ -1,3 +1,4 @@
+import e from 'cors';
 import { AuthService } from '../service/AuthService.js';
 
 export class AuthController {
@@ -5,7 +6,7 @@ export class AuthController {
     static async postLogin(req, res) {
         try {
             const { email, senha } = req.body;
-            const { token, escolaridade, authTokenAdmin, authTokenAluno } = await AuthService.validLogin({ email, senha });
+            const { token, escolaridade, authTokenAdmin, authTokenAluno, email: userEmail } = await AuthService.validLogin({ email, senha });
             res.cookie("token", token, {
                 httpOnly: true,
                 secure: false,
@@ -28,6 +29,7 @@ export class AuthController {
                 });
             }
 
+
             let redirectUrl;
 
             if (escolaridade === "Aluno Etec Itaquera") {
@@ -38,7 +40,7 @@ export class AuthController {
                 redirectUrl = '/dashbordAdmin';
             }
 
-            res.status(200).json({ msg: 'Login concluído com sucesso', redirectUrl });
+            res.status(200).json({ msg: 'Login concluído com sucesso', redirectUrl, email: userEmail });
         } catch (error) {
             res.status(500).json(error);
             console.log(error);

@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
-        const port = 3000
+        const port = 3000;
 
         const titulo = document.querySelector("#titulo").value.trim();
         const descricao = document.querySelector("#descricao").value.trim();

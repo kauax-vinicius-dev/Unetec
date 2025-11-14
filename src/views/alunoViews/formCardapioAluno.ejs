@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/aluno/formCardapioAluno.css">
+    <title>Unetec</title>
+</head>
+
+<body>
+    <section class="section-form">
+        <div class="logo">
+            <h1><span class="letra-preta">UN</span><span class="letra-vermelha">ETEC</span></h1>
+        </div>
+        <p>Preencha as informaçoes</p>
+        <form id="form" method="post">
+            <input list="opcao" id="Opcao" class="inputs" name="opcao" placeholder="Voce ira merendar ?" required>
+            <datalist id="opcao">
+                <option value="Sim">
+                <option value="Não">
+            </datalist>
+            <input list="horario" id="horarios" class="inputs" name="datalist-horarios"
+                placeholder="Em qual horario voce estuda ?" required>
+            <datalist id="horario">
+                <option value="Manhã">
+                <option value="Tarde">
+                <option value="Noite">
+            </datalist>
+            <input type="submit" value="Enviar" class="button-submit">
+        </form>
+    </section>
+    <script src="/js/aluno/formAlmocoAluno.js"></script>
+</body>
+
+</html>

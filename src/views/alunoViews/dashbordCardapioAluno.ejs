@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/imagens/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/css/aluno/dashbordAviso.css">
+    <link rel="stylesheet" href="/css/aluno/dashbordCardapioAluno.css">
     <title>Unetec</title>
 </head>
 
@@ -30,15 +30,82 @@
             <div class="aba-box2">
                 <button id="button-agenda" class="style-button1"><img src="/imagens/config-icon.svg"
                         alt="config-icon">&nbsp;Config</button>
-                <button id="button-agenda" class="style-button1"><img src="/imagens/conta-icon.svg"
-                        alt="conta-icon">&nbsp;Conta</button>
+                <button id="button-agenda" class="style-button1" onclick="window.location.href='/dashbordConta'"><img
+                        src="/imagens/conta-icon.svg" alt="conta-icon">&nbsp;Conta</button>
             </div>
         </section>
         <section class="dashbord">
+            <div class="div-dashbordCardapio">
+                <div class="div-table">
+                    <% if(cardapio.length < 1) { %>
+                        <h1>Nenhum cardápio cadastrado ainda.</h1>
+                        <% } %>
+                            <% cardapio.forEach(cardapio=> { %>
+                                <table class="tabela-cardapio">
+                                    <thead>
+                                        <tr>
+                                            <th class="th-dia">Dia</th>
+                                            <th class="th-descricao">Descrição</th>
+                                            <th class="th-like">Curtidas</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Segunda</td>
+                                            <td>
+                                                <%= cardapio.segunda %>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Terça</td>
+                                            <td>
+                                                <%= cardapio.terca %>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Quarta</td>
+                                            <td>
+                                                <%= cardapio.quarta %>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Quinta</td>
+                                            <td>
+                                                <%= cardapio.quinta %>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sexta</td>
+                                            <td>
+                                                <%= cardapio.sexta %>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <% }) %>
+                </div>
 
+                <div class="div-form">
+                    <div class="form-text">
+                        <h1>E aí, vai merendar hoje?</h1>
+                        <p>Sua resposta é muito importante!
+                            Ao confirmar se vai merendar, você ajuda a equipe da cozinha a se organizar melhor e evitar
+                            desperdícios de alimentos.</p>
+                    </div>
+                    <button class="bnt-form"
+                        onclick="window.location.href='/dashbordCardapioAluno/formAlmoco'">Responder
+                        agora</button>
+                </div>
+            </div>
         </section>
 
     </main>
+    <script src="/js/aluno/cardapioAluno.js"></script>
 </body>
 
 </html>
