@@ -62,52 +62,83 @@
                                             <td>
                                                 <%= cardapio.segunda %>
                                             </td>
-                                            <td></td>
+                                            <td>
+                                                <%= cardapio.likeSegunda %>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Terça</td>
                                             <td>
                                                 <%= cardapio.terca %>
                                             </td>
-                                            <td></td>
+                                            <td>
+                                                <%= cardapio.likeTerca %>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Quarta</td>
                                             <td>
                                                 <%= cardapio.quarta %>
                                             </td>
-                                            <td></td>
+                                            <td>
+                                                <%= cardapio.likeQuarta %>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Quinta</td>
                                             <td>
                                                 <%= cardapio.quinta %>
                                             </td>
-                                            <td></td>
+                                            <td>
+                                                <%= cardapio.likeQuinta %>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Sexta</td>
                                             <td>
                                                 <%= cardapio.sexta %>
                                             </td>
-                                            <td></td>
+                                            <td>
+                                                <%= cardapio.likeSexta %>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
                                 <% }) %>
                 </div>
                 <% if(cardapio.length>= 1) { %>
-                    <div class="div-form">
-                        <div class="form-text">
-                            <h1>E aí, vai merendar hoje?</h1>
-                            <p>Sua resposta é muito importante!
-                                Ao confirmar se vai merendar, você ajuda a equipe da cozinha a se organizar melhor e
-                                evitar
-                                desperdícios de alimentos.</p>
+                    <div class="interacoes">
+                        <div class="div-form">
+                            <div class="form-text">
+                                <h1>E aí, vai merendar hoje?</h1>
+                                <p>Sua resposta é muito importante!
+                                    Ao confirmar se vai merendar, você ajuda a equipe da cozinha a se organizar melhor e
+                                    evitar
+                                    desperdícios de alimentos.</p>
+                            </div>
+                            <button class="bnt-form"
+                                onclick="window.location.href='/dashbordCardapioAluno/formAlmoco'">Responder
+                                agora</button>
                         </div>
-                        <button class="bnt-form"
-                            onclick="window.location.href='/dashbordCardapioAluno/formAlmoco'">Responder
-                            agora</button>
+                        <div class="like-cardapio">
+                            <div class="like-text">
+                                <h1>Curtiu o rango ?</h1>
+                                <p>Dê seu like no cardápio e ajude nossas cozinheiras a saberem o que você mais gosta!
+                                </p>
+                            </div>
+                            <form action="" id="form">
+                                <input list="Campos" id="camposDias" class="inputs" name="campoEscolhido"
+                                    placeholder="Selecione o prato" required>
+                                <datalist id="Campos">
+                                    <option value="likeSegunda">Segunda-feira</option>
+                                    <option value="likeTerca">Terca-feira</option>
+                                    <option value="likeQuarta">Quarta-feira</option>
+                                    <option value="likeQuinta">Quinta-feira</option>
+                                    <option value="likeSexta">Sexta-feira</option>
+                                </datalist>
+                                <input type="submit" value="Curtir" class="button-submit">
+                            </form>
+                        </div>
                     </div>
             </div>
             <% } %>
@@ -116,6 +147,7 @@
     </main>
     <script src="/js/user/cardapio.js"></script>
     <script src="/js/public/darkMode.js"></script>
+    <script src="/js/public/likeCardapio.js"></script>
 </body>
 
 </html>

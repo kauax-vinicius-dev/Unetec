@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/admin/formAvisos.css">
+    <link rel="stylesheet" href="/css/models/variavies.css">
+    <title>Unetec</title>
+</head>
+
+<body>
+    <nav>
+        <button class="button-nav" onclick="window.location.href='/dashbordVisitaTecnicaAdmin'"><img
+                src="/imagens/setaEsquerda-icon.svg"> Voltar</button>
+    </nav>
+    <section class="section-form">
+        <div class="logo">
+            <h1><span class="letra-preta">UN</span><span class="letra-vermelha">ETEC</span></h1>
+        </div>
+        <p>Preencha as informaçoes da visita</p>
+        <form id="form" method="post">
+            <input type="text" id="titulo" class="inputs" name="titulo" placeholder="Titulo da visita" required>
+            <input type="text" id="descricao" class="inputs" name="descricao" placeholder="Descrição da visita"
+                required>
+            <input type="text" id="localizacao" class="inputs" name="localizacao" placeholder="Endereço da visita"
+                required>
+            <input type="url" id="dockerLink" class="inputs" name="dockerLink"
+                placeholder="Link do arquivo da autorizacão para download" required>
+            <input type="text" id="data" class="inputs" name="data" placeholder="Data da visita" required>
+            <input type="text" id="salas" class="inputs" name="salas" placeholder="Digite as turmas que podem participar" required>
+            <input type="submit" value="Criar visita" class="button-submit">
+        </form>
+    </section>
+    <script src="/js/public/darkMode.js"></script>
+    <script src="/js/admin/visitaTecForm.js"></script>
+</body>
+
+</html>

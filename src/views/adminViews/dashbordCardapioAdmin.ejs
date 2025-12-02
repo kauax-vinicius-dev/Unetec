@@ -26,8 +26,11 @@
                     <button id="button-cardapio" class="style-button1"
                         onclick="window.location.href='/dashbordCardapioAdmin'"><img src="/imagens/cardapio-icon.svg"
                             alt="avisos-icon">&nbsp;&nbsp;Cardápio</button>
-                    <button id="button-chat" class="style-button1" onclick="window.location.href='/dashbordChatAdmin'"><img
-                            src="/imagens/chat-icon.svg" alt="conta-icon">&nbsp;Chat</button>
+                    <button id="button-chat" class="style-button1"
+                        onclick="window.location.href='/dashbordChatAdmin'"><img src="/imagens/chat-icon.svg"
+                            alt="conta-icon">&nbsp;Chat</button>
+                   <button id="button-chat" class="style-button1" onclick="window.location.href='/dashbordVisitaTecnicaAdmin'"><img
+              src="/imagens/visitaTec-icon.svg" alt="conta-icon">&nbsp;Visita Téc.</button>
                 </div>
             </div>
             <div class="aba-box2">
@@ -37,6 +40,7 @@
                 <button id="button-agenda" class="style-button1"
                     onclick="window.location.href='/dashbordContaAdmin'"><img src="/imagens/conta-icon.svg"
                         alt="conta-icon">&nbsp;Conta</button>
+
             </div>
         </section>
         <section class="dashbord">
@@ -79,35 +83,49 @@
                                             <td>
                                                 <%= cardapio.segunda %>
                                             </td>
-                                            <td></td>
+                                            <td>
+                                                <%= cardapio.likeSegunda %>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Terça</td>
                                             <td>
                                                 <%= cardapio.terca %>
                                             </td>
-                                            <td></td>
+                                            <td>
+                                                <%= cardapio.likeTerca %>
+                                            </td>
+
                                         </tr>
                                         <tr>
                                             <td>Quarta</td>
                                             <td>
                                                 <%= cardapio.quarta %>
                                             </td>
-                                            <td></td>
+                                            <td>
+                                                <%= cardapio.likeQuarta %>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Quinta</td>
                                             <td>
                                                 <%= cardapio.quinta %>
                                             </td>
-                                            <td></td>
+                                            <td>
+                                                <%= cardapio.likeQuinta %>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Sexta</td>
                                             <td>
                                                 <%= cardapio.sexta %>
                                             </td>
-                                            <td></td>
+                                            <td>
+                                                <%= cardapio.likeSexta %>
+
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>

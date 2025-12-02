@@ -25,4 +25,15 @@ export class CardapioAlunoController {
         }
 
     }
+
+    static async curteCardapio(req, res) {
+        try {
+            const { diaEscolhido, estado } = req.body;
+            await CardapioService.curtidasCardapio(diaEscolhido, estado)
+            res.status(200).json({ message: "Like registrado com sucesso" });
+        } catch (error) {
+            console.error("Erro ao enviar informações", error);
+            res.status(500).json({ message: "Erro ao enviar informações" })
+        }
+    }
 }

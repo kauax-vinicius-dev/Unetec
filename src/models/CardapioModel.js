@@ -10,7 +10,27 @@ export const Cardapio = mongoose.model('Cardapio', {
         type: Date,
         default: Date.now
     },
-    like: {
+    likeSegunda: {
+        type: Number,
+        default: 0
+    },
+
+    likeTerca: {
+        type: Number,
+        default: 0
+    },
+
+    likeQuarta: {
+        type: Number,
+        default: 0
+    },
+
+    likeQuinta: {
+        type: Number,
+        default: 0
+    },
+
+    likeSexta: {
         type: Number,
         default: 0
     },

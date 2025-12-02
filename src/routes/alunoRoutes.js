@@ -20,7 +20,7 @@ alunoRoutes.get("/dashbordChat", authToken, authTokenAluno, ChatUserController.r
 
 //POST routers
 alunoRoutes.post("/dashbordCardapioAluno/formAlmoco", authToken, authTokenAluno, CardapioAlunoController.quantidadeMerenda);
+alunoRoutes.post("/dashbordCardapioAluno", authToken, authTokenAluno, CardapioAlunoController.curteCardapio);
 alunoRoutes.post("/dashbordConta", authToken, authTokenAluno, viewsAlunoController.logout);
  
-
 export default alunoRoutes;

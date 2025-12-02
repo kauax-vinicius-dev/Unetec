@@ -6,6 +6,7 @@ import { viewsAdminController } from "../controllers/adminControllers/viewsAdmin
 import { CardapioAdminController } from "../controllers/adminControllers/CardapioAdminController.js";
 import { ConfigAdminController } from "../controllers/adminControllers/ConfigAdminController.js";
 import { ChatAdminController } from "../controllers/adminControllers/ChatAdminController.js";
+import { VisitaTecAdminController } from "../controllers/adminControllers/visitaTecController.js";
 
 const adminRoutes = Router();
 
@@ -19,12 +20,17 @@ adminRoutes.get("/dashbordCardapio/Form/Edit/:id", authToken, authTokenAdmin, Ca
 adminRoutes.get("/dashbordContaAdmin", authToken, authTokenAdmin, viewsAdminController.renderDashbordConta);
 adminRoutes.get("/dashbordConfigAdmin", authToken, authTokenAdmin, ConfigAdminController.renderDashbordConfig);
 adminRoutes.get("/dashbordChatAdmin", authToken, authTokenAdmin, ChatAdminController.renderChat)
+adminRoutes.get("/dashbordVisitaTecnicaAdmin", authToken, authTokenAdmin, VisitaTecAdminController.renderVisitaTec);
+adminRoutes.get("/dashbordVisitaTecnicaAdmin/Form", authToken, authTokenAdmin, VisitaTecAdminController.renderFormVisitaTec);
+
 
 //Post routers
 adminRoutes.post("/dashbordAvisosAdmin/Form", authToken, authTokenAdmin, AvisosAdminController.criaAvisos);
 adminRoutes.post("/dashbordCardapioAdmin/Form", authToken, authTokenAdmin, CardapioAdminController.criaCardapio);
 adminRoutes.post("/dashbordCardapio/Form/Edit/:id", authToken, authTokenAdmin, CardapioAdminController.editarCardapio);
 adminRoutes.post("/dashbordContaAdmin", authToken, authTokenAdmin, viewsAdminController.logout);
+adminRoutes.post("/dashbordVisitaTecnicaAdmin/Form", authToken, authTokenAdmin, VisitaTecAdminController.criaVisitaTec);
+
 
 
 

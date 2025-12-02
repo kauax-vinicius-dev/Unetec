@@ -42,7 +42,6 @@ export class CardapioService {
         const quantidadeCardapioCriados = await Cardapio.countDocuments();
 
         if (quantidadeCardapioCriados === 0) {
-            console.log("Nenhum cardapio criado,não é possivel responder ");
             return;
         }
         if (opcao != "Sim" && opcao != "Não") {
@@ -77,4 +76,44 @@ export class CardapioService {
             )
         }
     }
+
+    static async curtidasCardapio(diaEscolhido) {
+        const quantidadeCardapioCriados = await Cardapio.countDocuments();
+
+        if (quantidadeCardapioCriados === 0) {
+            return;
+        }
+
+        if (!diaEscolhido) {
+            return;
+        }
+
+        return await Cardapio.updateOne(
+            {},
+            { $set: { [diaEscolhido]: 1 } }
+        )
+    }
+
+    static async removeCurtidasCardapio(diaEscolhido, estado) {
+        const quantidadeCardapioCriados = await Cardapio.countDocuments();
+
+        if (quantidadeCardapioCriados === 0) {
+            return;
+        }
+
+        if (!diaEscolhido) {
+            return;
+        }
+
+        if (estado) {
+            return await Cardapio.updateOne({}, { $inc: { [diaEscolhido]: 1 } });
+
+        }
+
+        if (!estado) {
+            return await Cardapio.updateOne({}, { $inc: { [diaEscolhido]: -1 } });
+
+        }
+    }
+
 } 

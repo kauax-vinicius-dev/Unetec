@@ -1,12 +1,13 @@
 
 async function logout() {
     try {
-        const response = await fetch(`/dashbordContaAdmin`, {
+        const response = await fetch(`/dashbordConta`, {
             method: "POST"
         })
 
         if (!response.ok) {
             alert("Erro ao realizar logout")
+            return;
         }
 
         if (response.ok) {
@@ -25,4 +26,3 @@ async function outraConta(event) {
     window.location.href = "/login";
 
 }
-

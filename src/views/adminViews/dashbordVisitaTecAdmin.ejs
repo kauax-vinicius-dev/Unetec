@@ -29,8 +29,9 @@
                     <button id="button-chat" class="style-button1"
                         onclick="window.location.href='/dashbordChatAdmin'"><img src="/imagens/chat-icon.svg"
                             alt="conta-icon">&nbsp;Chat</button>
-                   <button id="button-chat" class="style-button1" onclick="window.location.href='/dashbordVisitaTecnicaAdmin'"><img
-              src="/imagens/visitaTec-icon.svg" alt="conta-icon">&nbsp;Visita Téc.</button>
+                    <button id="button-chat" class="style-button1"
+                        onclick="window.location.href='/dashbordVisitaTecnicaAdmin'"><img
+                            src="/imagens/visitaTec-icon.svg" alt="conta-icon">&nbsp;Visita Téc.</button>
                 </div>
             </div>
             <div class="aba-box2">
@@ -44,32 +45,11 @@
         </section>
         <section class="dashbord">
             <div class="nav-tarefas">
-                <h1>Avisos</h1>
-                <button class="button-nav" onclick="window.location.href='/dashbordAvisosAdmin/Form'">Criar
-                    Avisos</button>
+                <h1>Visitas Técnincas</h1>
+                <button class="button-nav" onclick="window.location.href='/dashbordVisitaTecnicaAdmin/Form'">Criar
+                    Visitas</button>
             </div>
-            <div class="quadro-tarefas">
-                <% avisos.forEach(aviso=> { %>
-                    <div class="aviso-item">
-                        <h2>
-                            <%= aviso.titulo %>
-                        </h2>
-
-                        <p><strong>Descrição:</strong>
-                            <%= aviso.descricao %>
-                        </p>
-
-                        <p><strong>Urgência:</strong>
-                            <%= aviso.urgencia %>
-                        </p>
-
-                        <p><strong>Criado em:</strong>
-                            <%= aviso.data.toLocaleDateString('pt-BR') %>
-                        </p>
-                        <button class="button-excluir" onclick="excluirAviso('<%= aviso._id %>')">Excluir aviso</button>
-
-                    </div>
-                    <% }) %>
+            <div class="quadro-visitas">
             </div>
         </section>
 
