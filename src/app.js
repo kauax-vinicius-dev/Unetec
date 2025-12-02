@@ -8,11 +8,22 @@ import alunoRoutes from './routes/alunoRoutes.js';
 import conectarMongo from './config/dbConfig.js';
 import path from 'path';
 import cookieParser from 'cookie-parser';
+import { Server as SocketIoServer } from "socket.io";
+import { createServer } from 'http';
+import  chatSocket  from './socket/socket.js'
+
+
 
 
 // Criando o app antes da conexão
 const app = express();
 const port = 3000;
+const httpServer = createServer(app);
+const io = new SocketIoServer(httpServer);
+
+chatSocket(io);
+
+
 
 // Conectando ao banco
 conectarMongo();
@@ -40,9 +51,10 @@ app.use(adminRoutes);
 app.use(alunoRoutes);
 
 // Iniciando o servidor
-app.listen(port, () => {
+httpServer.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}`);
     console.log(`http://localhost:${port}`)
 });
+
 
 

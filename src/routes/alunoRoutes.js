@@ -4,6 +4,8 @@ import { authToken } from "../middlewares/checkAuthenticated.js";
 import { AvisoAlunoController } from "../controllers/alunoControllers/AvisoAlunoController.js";
 import { viewsAlunoController } from "../controllers/alunoControllers/viewsAlunoController.js";
 import { CardapioAlunoController } from "../controllers/alunoControllers/CardapioAlunoController.js";
+import { ConfigUserController } from "../controllers/alunoControllers/ConfigUserController.js";
+import { ChatUserController } from "../controllers/alunoControllers/ChatUserController.js";
 
 const alunoRoutes = Router();
 
@@ -13,6 +15,8 @@ alunoRoutes.get("/dashbordAvisosAluno", authToken, authTokenAluno, AvisoAlunoCon
 alunoRoutes.get("/dashbordCardapioAluno", authToken, authTokenAluno, CardapioAlunoController.renderCardapioAluno);
 alunoRoutes.get("/dashbordCardapioAluno/formAlmoco", authToken, authTokenAluno, CardapioAlunoController.renderFormAlmoco);
 alunoRoutes.get("/dashbordConta", authToken, authTokenAluno, viewsAlunoController.renderDashborConta);
+alunoRoutes.get("/dashbordConfig", authToken, authTokenAluno, ConfigUserController.renderConfigDashbord);
+alunoRoutes.get("/dashbordChat", authToken, authTokenAluno, ChatUserController.renderChat);
 
 //POST routers
 alunoRoutes.post("/dashbordCardapioAluno/formAlmoco", authToken, authTokenAluno, CardapioAlunoController.quantidadeMerenda);

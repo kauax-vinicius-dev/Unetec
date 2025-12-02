@@ -39,6 +39,12 @@ export class CardapioService {
     }
 
     static async quantidadeMerenda(opcao, horario) {
+        const quantidadeCardapioCriados = await Cardapio.countDocuments();
+
+        if (quantidadeCardapioCriados === 0) {
+            console.log("Nenhum cardapio criado,não é possivel responder ");
+            return;
+        }
         if (opcao != "Sim" && opcao != "Não") {
             return;
         }
@@ -54,7 +60,7 @@ export class CardapioService {
         if (opcao === "Sim" && horario === "Manhã") {
             return await Cardapio.updateOne(
                 {},
-                { $inc: {quantidadeManha: 1 } }
+                { $inc: { quantidadeManha: 1 } }
             )
         }
 

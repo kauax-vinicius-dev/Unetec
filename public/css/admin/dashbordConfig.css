@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    margin: 0%;
+    padding: 0%;
+    font-family: var(--fonte-poppins);
+}
+
+:root {
+    --pretao: black;
+    --vermelhao: #ff3131;
+    --vermelho-escuro: #ad3030;
+    --brancolas: white;
+    --cinzolas: #d9d9d9;
+    --cinzao: #5f5f5f;
+    --cinzaescurinho: #cfcfcf;
+    --fonte-poppins: "Poppins", sans-serif;
+}
+
+.dashbord {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 50px;
+}
+
+.config {
+    width: 90%;
+    height: 13vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 35%;
+    background-color: var(--brancolas);
+    border-radius: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.text {
+    h1 {
+        font-size: 35px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+}
+
+.opcao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    background-color: var(--cinzolas);
+    width: 125px;
+    height: 60px;
+    border-radius: 200px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s;
+}
+
+.button::before {
+    position: absolute;
+    content: '';
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 200px;
+    margin: 5px;
+    transition: 0.3s;
+}
+
+#config-1:checked+.button {
+    background-color: rgb(38, 255, 0);
+
+}
+
+#config-1:checked+.button::before {
+    transform: translatex(65px);
+}
+
+#config-1 {
+    display: none;
+}

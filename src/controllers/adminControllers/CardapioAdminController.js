@@ -9,8 +9,9 @@ export class CardapioAdminController {
         res.status(200).render("adminViews/formCardapioAdmin");
     }
 
-    static renderFormEditCardapio(req, res){
-        res.status(200).render("adminViews/formEditCardapioAdmin");
+    static renderFormEditCardapio(req, res) {
+        const { id } = req.params;
+        res.status(200).render("adminViews/formEditCardapioAdmin", { cardapioId: id });
     }
 
     static async criaCardapio(req, res) {
@@ -37,13 +38,15 @@ export class CardapioAdminController {
 
     static async editarCardapio(req, res) {
         try {
-            const { id, campoEscolhido, alteracaoCampoEscolhido } = req.body;
+            const { id } = req.params;
+            const { campoEscolhido, alteracaoCampoEscolhido } = req.body;
             await CardapioService.editaCardapio(id, campoEscolhido, alteracaoCampoEscolhido);
+            res.status(200).json({ message: "Cardapio editado o com sucesso" }); 
         } catch (error) {
             console.error("Erro a editar cardapio:", error);
             res.status(500).send("Erro a editar cardapio");
+        }
+
+
     }
-
-
-}
 }

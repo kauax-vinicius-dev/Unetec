@@ -5,18 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/imagens/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href=" /css/adminItaquera/formEditCardapio.css">
+    <link rel="stylesheet" href=" /css/admin/formEditCardapio.css">
+    <link rel="stylesheet" href="/css/models/variavies.css">
     <title>Unetec</title>
 </head>
 
 <body>
+    <nav>
+        <button class="button-nav" onclick="window.location.href='/dashbordCardapioAdmin'"><img
+                src="/imagens/setaEsquerda-icon.svg"> Voltar</button>
+    </nav>
     <section class="section-form">
         <div class="logo">
             <h1><span class="letra-preta">UN</span><span class="letra-vermelha">ETEC</span></h1>
         </div>
         <p>Preencha as informaçoes para<br>editar cardápio</p>
         <form id="form" method="post">
-            <input list="Campos" id="camposDias" class="inputs" name="campos"
+            <input list="Campos" id="camposDias" class="inputs" name="campoEscolhido"
                 placeholder="Escolha o campo que deseja editar" required>
             <datalist id="Campos">
                 <option value="segunda">Segunda-feira</option>
@@ -26,12 +31,13 @@
                 <option value="sexta">Sexta-feira</option>
             </datalist>
             <label id="label-campos" class="label-text"></label>
-            <input type="text" id="descricao" class="inputs" name="descricao"
+            <input type="text" id="descricao" class="inputs" name="alterecaoCampoEscolhido"
                 placeholder="Informe a alteracão do campo">
             <input type="submit" value="Editar cardápio" class="button-submit">
         </form>
     </section>
-    <script src="/js/admin/cardapioFormEditAdmin.js"></script>
+    <script src="/js/public/darkMode.js"></script>
+    <script src="/js/admin/cardapioFormEdit.js"></script>
 </body>
 
 </html>

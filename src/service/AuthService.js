@@ -20,6 +20,7 @@ export class AuthService {
 
         const user = await User.findOne({ email: email });
 
+
         if (!user) {
             throw { status: 442, msg: 'Usuário não encontrado' };
         }
@@ -39,10 +40,12 @@ export class AuthService {
         }
 
         const escolaridade = user.escolaridade;
+        const nome = user.nome;
+        const userId = user._id;
 
 
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '6h' });
-        return { token, escolaridade, authTokenAdmin, authTokenAluno, email };
+        return { token, escolaridade, authTokenAdmin, authTokenAluno, email, nome, userId};
     }
 
     static async validRegister({ nome, email, escolaridade, senha, senhaCopy }) {

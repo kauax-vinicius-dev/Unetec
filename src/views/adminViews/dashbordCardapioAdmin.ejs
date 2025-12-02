@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/imagens/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/css/adminItaquera/dashbordCardapio.css">
+    <link rel="stylesheet" href="/css/admin/dashbordCardapio.css">
+    <link rel="stylesheet" href="/css/models/variavies.css">
     <title>Unetec</title>
 </head>
 
@@ -25,12 +26,15 @@
                     <button id="button-cardapio" class="style-button1"
                         onclick="window.location.href='/dashbordCardapioAdmin'"><img src="/imagens/cardapio-icon.svg"
                             alt="avisos-icon">&nbsp;&nbsp;Cardápio</button>
+                    <button id="button-chat" class="style-button1" onclick="window.location.href='/dashbordChatAdmin'"><img
+                            src="/imagens/chat-icon.svg" alt="conta-icon">&nbsp;Chat</button>
                 </div>
             </div>
             <div class="aba-box2">
-                <button id="button-config" class="style-button1"><img src="/imagens/config-icon.svg"
+                <button id="button-agenda" class="style-button1"
+                    onclick="window.location.href='/dashbordConfigAdmin'"><img src="/imagens/config-icon.svg"
                         alt="config-icon">&nbsp;Config</button>
-                <button id="button-conta" class="style-button1"
+                <button id="button-agenda" class="style-button1"
                     onclick="window.location.href='/dashbordContaAdmin'"><img src="/imagens/conta-icon.svg"
                         alt="conta-icon">&nbsp;Conta</button>
             </div>
@@ -39,18 +43,20 @@
             <div class="nav-cardapio">
                 <h1>Cardápio</h1>
                 <div class="buttons-nav">
-                    <% if (cardapio.length < 1) { %>
+                    <% if (cardapio.length> 0) { %>
+                        <button class="button-nav button-excluir" id="button-excluir"
+                            data-id="<%= cardapio[0]._id %>">Excluir Cardápio</button>
+
+                        <button class="button-nav " id="button-editar"
+                            onclick="window.location.href='/dashbordCardapio/Form/Edit/<%= cardapio[0]._id %>'">Editar
+                            Cardápio</button>
                         <% } %>
-                            <% if (cardapio.length> 0) { %>
-                                <button class="button-nav button-excluir" id="button-excluir"
-                                    data-id="<%= cardapio[0]._id %>">Excluir Cardápio</button>
+                            <% if (cardapio.length < 1) { %>
+                                <button class="button-nav"
+                                    onclick="window.location.href='/dashbordCardapioAdmin/Form'">Criar
+                                    Cardápio</button>
                                 <% } %>
-                                    <button class="button-nav"
-                                        onclick="window.location.href='/dashbordCardapio/Form/Edit'">Editar
-                                        Cardápio</button>
-                                    <button class="button-nav"
-                                        onclick="window.location.href='/dashbordCardapioAdmin/Form'">Criar
-                                        Cardápio</button>
+
                 </div>
             </div>
             <div class="div-dashbordCardapio">
@@ -123,7 +129,8 @@
             <% }) %>
         </section>
     </main>
-    <script src="/js/admin/cardapioDashbord.js"></script>
+    <script src="/js/public/darkMode.js"></script>
+    <script src="/js/admin/cardapio.js"></script>
 </body>
 
 </html>

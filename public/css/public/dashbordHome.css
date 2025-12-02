@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    margin: 0%;
+    padding: 0%;
+    font-family: var(--fonte-poppins);
+}
+
+:root {
+    --pretao: black;
+    --vermelhao: #ff3131;
+    --vermelho-escuro: #ad3030;
+    --brancolas: white;
+    --cinzolas: #d9d9d9;
+    --cinzao: #5f5f5f;
+    --cinzaescurinho: #cfcfcf;
+    --fonte-poppins: "Poppins", sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--vermelhao);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.aba-padrao {
+    width: 16%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--brancolas);
+    gap: 30%;
+}
+
+.aba-box1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.aba-box2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.logo {
+    font-family: var(--fonte-poppins);
+
+}
+
+.letra-preta {
+    color: var(--pretao);
+}
+
+.letra-vermelha {
+    color: var(--vermelhao);
+}
+
+.opcoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.style-button1 {
+    width: 12rem;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background-color: var(--brancolas);
+    border: none;
+    font-size: 17px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: var(--pretao);
+    border-radius: 15px;
+}
+
+.style-button1:hover {
+    background-color: var(--cinzolas);
+}
+
+
+.nav-nome {
+    width: 95%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    color: var(--pretao);
+    font-size: 14px;
+    border-bottom: var(--brancolas) solid 5px;
+}
+
+
+.dashbord {
+    width: 84%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--cinzaescurinho);
+    gap: 2.8rem;
+}
+
+.enblema {
+    width: 70%;
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e61710, #000000);
+    color: var(--brancolas);
+    border-radius: 15px;
+    font-size: 44px;
+    margin-bottom: 1rem;
+    margin-right: 5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.enblema::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.4),
+            transparent);
+    transform: skewX(-25deg);
+    animation: reflexo 3.5s infinite;
+}
+
+@keyframes reflexo {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 150%;
+    }
+}
+
+.dashbord-infos {
+    width: 90%;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 4rem;
+}
+
+.noticias {
+    color: var(--pretao)
+}
+
+.noticias-div {
+    width: 85%;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2px 12px;
+    background-color: var(--brancolas);
+
+    h1 {
+        position: fixed;
+        font-size: 4rem;
+    }
+
+    p {
+        text-align: justify;
+        margin-top: 12rem;
+    }
+}
+
+.painel-infos {
+    position: relative;
+    display: inline-block;
+}
+
+.painel-infos img {
+    display: block;
+}
+
+.painel-infos .textos {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.painel-infos .textos p {
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 5px 0;
+    color: var(--pretao);
+}

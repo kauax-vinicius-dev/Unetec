@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/imagens/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/css/adminItaquera/dashbordAvisosModelo.css">
+    <link rel="stylesheet" href="/css/admin/dashbordAvisos.css">
+    <link rel="stylesheet" href="/css/models/variavies.css">
     <title>Unetec</title>
 </head>
 
@@ -25,10 +26,13 @@
                     <button id="button-cardapio" class="style-button1"
                         onclick="window.location.href='/dashbordCardapioAdmin'"><img src="/imagens/cardapio-icon.svg"
                             alt="avisos-icon">&nbsp;&nbsp;Cardápio</button>
+                    <button id="button-chat" class="style-button1" onclick="window.location.href='/dashbordChatAdmin'"><img
+                            src="/imagens/chat-icon.svg" alt="conta-icon">&nbsp;Chat</button>
                 </div>
             </div>
             <div class="aba-box2">
-                <button id="button-agenda" class="style-button1"><img src="/imagens/config-icon.svg"
+                <button id="button-agenda" class="style-button1"
+                    onclick="window.location.href='/dashbordConfigAdmin'"><img src="/imagens/config-icon.svg"
                         alt="config-icon">&nbsp;Config</button>
                 <button id="button-agenda" class="style-button1"
                     onclick="window.location.href='/dashbordContaAdmin'"><img src="/imagens/conta-icon.svg"
@@ -67,6 +71,7 @@
         </section>
 
     </main>
+    <script src="/js/public/darkMode.js"></script>
     <script src="/js/admin/avisos.js"></script>
 </body>
 
