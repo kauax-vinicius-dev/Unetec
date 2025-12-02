@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         try {
-            const response = await fetch(`http://localhost:${port}/dashbordAvisosAdmin/Form`, {
+            const response = await fetch(`/dashbordAvisosAdmin/Form`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

@@ -5,23 +5,23 @@ document.addEventListener("DOMContentLoaded", () => {
         event.preventDefault();
 
         const campoEscolhido = document.querySelector("#camposDias").value.trim();
-        const alteracaoCampoEscolhido = document.querySelector("#descricao").value.trim(); 
+        const alteracaoCampoEscolhido = document.querySelector("#descricao").value.trim();
         const port = 3000;
         const testaString = /\d/;
-        
-    
-        const caminho = window.location.pathname; 
+
+
+        const caminho = window.location.pathname;
         const partes = caminho.split('/');
         const id = partes[partes.length - 1];
 
-        console.log("DEBUG:", { 
-            id, 
-            campoEscolhido, 
+        console.log("DEBUG:", {
+            id,
+            campoEscolhido,
             alteracaoCampoEscolhido,
-            caminho: window.location.pathname 
+            caminho: window.location.pathname
         });
 
-     
+
         if (
             campoEscolhido !== "segunda" &&
             campoEscolhido !== "terca" &&
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
 
-            const response = await fetch(`http://localhost:${port}/dashbordCardapio/Form/Edit/${id}`, {
+            const response = await fetch(`/dashbordCardapio/Form/Edit/${id}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

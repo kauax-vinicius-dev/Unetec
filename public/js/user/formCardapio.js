@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         try {
-            const response = await fetch(`http://localhost:${port}/dashbordCardapioAluno/formAlmoco`, {
+            const response = await fetch(`/dashbordCardapioAluno/formAlmoco`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

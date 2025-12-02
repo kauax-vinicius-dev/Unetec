@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
             };
 
             try {
-                const response = await fetch(`http://localhost:${port}/register`, {
+                const response = await fetch(`/register`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
