@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/imagens/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/css/admin/dashbordVisitaTec.css">
+    <link rel="stylesheet" href="/css/user/dashbordVisitaTec.css">
     <link rel="stylesheet" href="/css/models/variavies.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet"
@@ -22,38 +22,32 @@
                 </div>
                 <div class="opcoes">
                     <button id="button-avisos" class="style-button1"
-                        onclick="window.location.href='/dashbordAvisosAdmin'"><img src="/imagens/aviso-icon.svg"
+                        onclick="window.location.href='/dashbordAvisosAluno'"><img src="/imagens/aviso-icon.svg"
                             alt="avisos-icon">&nbsp;&nbsp;Avisos</button>
-                    <button id="button-home" class="style-button1" onclick="window.location.href='/dashbordAdmin'"><img
+                    <button id="button-home" class="style-button1" onclick="window.location.href='/dashbordAluno'"><img
                             src="/imagens/home-icon.svg" alt="avisos-icon">&nbsp;&nbsp;Home</button>
                     <button id="button-cardapio" class="style-button1"
-                        onclick="window.location.href='/dashbordCardapioAdmin'"><img src="/imagens/cardapio-icon.svg"
+                        onclick="window.location.href='/dashbordCardapioAluno'"><img src="/imagens/cardapio-icon.svg"
                             alt="avisos-icon">&nbsp;&nbsp;Cardápio</button>
+                    <button id="button-chat" class="style-button1" onclick="window.location.href='/dashbordChat'"><img
+                            src="/imagens/chat-icon.svg" alt="conta-icon">&nbsp;Chat</button>
                     <button id="button-chat" class="style-button1"
-                        onclick="window.location.href='/dashbordChatAdmin'"><img src="/imagens/chat-icon.svg"
-                            alt="conta-icon">&nbsp;Chat</button>
-                    <button id="button-chat" class="style-button1"
-                        onclick="window.location.href='/dashbordVisitaTecnicaAdmin'"><img
-                            src="/imagens/visitaTec-icon.svg" alt="conta-icon">&nbsp;Visita Téc.</button>
+                        onclick="window.location.href='/dashbordVisitaTecnica'"><img src="/imagens/visitaTec-icon.svg"
+                            alt="conta-icon">&nbsp;Visita Téc.</button>
                 </div>
             </div>
             <div class="aba-box2">
-                <button id="button-agenda" class="style-button1"
-                    onclick="window.location.href='/dashbordConfigAdmin'"><img src="/imagens/config-icon.svg"
-                        alt="config-icon">&nbsp;Config</button>
-                <button id="button-agenda" class="style-button1"
-                    onclick="window.location.href='/dashbordContaAdmin'"><img src="/imagens/conta-icon.svg"
-                        alt="conta-icon">&nbsp;Conta</button>
+                <button id="button-agenda" class="style-button1" onclick="window.location.href='/dashbordConfig'"><img
+                        src="/imagens/config-icon.svg" alt="config-icon">&nbsp;Config</button>
+                <button id="button-agenda" class="style-button1" onclick="window.location.href='/dashbordConta'"><img
+                        src="/imagens/conta-icon.svg" alt="conta-icon">&nbsp;Conta</button>
             </div>
         </section>
 
         <section class="dashbord">
             <div class="nav-tarefas">
                 <h1>Visitas Técnincas</h1>
-                <button class="button-nav" onclick="window.location.href='/dashbordVisitaTecnicaAdmin/Form'">Criar
-                    Visitas</button>
             </div>
-
             <div class="quadro-visitas">
                 <% visitasTec.forEach(visita=> { %>
                     <div class="item-visita">
@@ -79,7 +73,6 @@
                             <a href="<%= visita.pdfLink %>" target="_blank"><button class="bnt-download"
                                     onclick="redire">Baixar
                                     autorização<span class="material-symbols-outlined"> download </span></button></a>
-                            <button class="button-excluir" onclick="excluirVisita('<%= visita._id %>')">Excluir</button>
                         </div>
                     </div>
                     <% }) %>
@@ -89,7 +82,6 @@
     <script src="/js/public/darkMode.js"></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="/js/admin/mapasVisitas.js"></script>
-    <script src="/js/admin/visitaTecAdmin.js"></script>
 </body>
 
 </html>

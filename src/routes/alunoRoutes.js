@@ -6,6 +6,7 @@ import { viewsAlunoController } from "../controllers/alunoControllers/viewsAluno
 import { CardapioAlunoController } from "../controllers/alunoControllers/CardapioAlunoController.js";
 import { ConfigUserController } from "../controllers/alunoControllers/ConfigUserController.js";
 import { ChatUserController } from "../controllers/alunoControllers/ChatUserController.js";
+import { VisitaTecUser } from "../controllers/alunoControllers/VisitacTecController.js";
 
 const alunoRoutes = Router();
 
@@ -17,10 +18,11 @@ alunoRoutes.get("/dashbordCardapioAluno/formAlmoco", authToken, authTokenAluno, 
 alunoRoutes.get("/dashbordConta", authToken, authTokenAluno, viewsAlunoController.renderDashborConta);
 alunoRoutes.get("/dashbordConfig", authToken, authTokenAluno, ConfigUserController.renderConfigDashbord);
 alunoRoutes.get("/dashbordChat", authToken, authTokenAluno, ChatUserController.renderChat);
+alunoRoutes.get("/dashbordVisitaTecnica", authToken, authTokenAluno, VisitaTecUser.renderVisitaTec);
 
 //POST routers
 alunoRoutes.post("/dashbordCardapioAluno/formAlmoco", authToken, authTokenAluno, CardapioAlunoController.quantidadeMerenda);
 alunoRoutes.post("/dashbordCardapioAluno", authToken, authTokenAluno, CardapioAlunoController.curteCardapio);
 alunoRoutes.post("/dashbordConta", authToken, authTokenAluno, viewsAlunoController.logout);
- 
+
 export default alunoRoutes;

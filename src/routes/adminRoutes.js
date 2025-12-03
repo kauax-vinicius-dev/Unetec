@@ -39,5 +39,6 @@ adminRoutes.post("/dashbordVisitaTecnicaAdmin/Form", authToken, authTokenAdmin, 
 //Delet routers
 adminRoutes.delete("/dashbordAvisosAdmin/Delete/:id", authToken, authTokenAdmin, AvisosAdminController.excluirAvisos);
 adminRoutes.delete("/dashbordCardapioAdmin/Delete/:id", authToken, authTokenAdmin, CardapioAdminController.excluiCardapio);
+adminRoutes.delete("/dashbordVisitaTecnicaAdmin/Delete/:id", authToken, authTokenAdmin, VisitaTecAdminController.excluiVisita);
 
 export default adminRoutes;

@@ -30,4 +30,17 @@ export class VisitaTecAdminController {
             console.log(error);
         }
     }
+
+    static async excluiVisita(req, res) {
+        try {
+            const { id } = req.params;
+            await VisitaTecService.deletarVisitaTec(id);
+            res.status(200).json({ msg: 'Visita Téc. excluida com sucesso' });
+        } catch (error) {
+            res.status(500).json(error);
+            console.log(error);
+
+        }
+
+    }
 }

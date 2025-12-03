@@ -92,13 +92,14 @@ main {
     border: none;
     font-size: 17px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: 0.5s ;
     color: var(--pretao);
     border-radius: 15px;
 }
 
 .style-button1:hover {
     background-color: var(--cinzolas);
+     font-size: 17.3px;
 }
 
 
@@ -136,13 +137,13 @@ main {
     font-size: 18px;
     font-family: var(--fonte-poppins);
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition:0.5s;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 .button-nav:hover {
     background-color: var(--vermelho-escuro);
-    font-size: 18.5px;
+    font-size: 18.3px;
 }
 
 .quadro-tarefas {
@@ -181,12 +182,11 @@ main {
     height: 4vh;
     text-align: center;
     background-color: var(--vermelhao);
-    color: var(--brancolas);
+    color: white;
     border-radius: 15px;
     border: none;
     font-size: 15px;
-    transition: background-color 0.3s ease;
-    color: var(--pretao);
+    transition: 0.5s ;
 }
 
 

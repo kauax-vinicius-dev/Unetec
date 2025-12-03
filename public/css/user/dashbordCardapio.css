@@ -148,6 +148,7 @@ main {
     border-radius: 15px;
     border: 1px solid black;
     margin-bottom: 25px;
+    box-shadow: 8px 8px 14px rgba(0, 0, 0, 0.25);
 }
 
 
@@ -275,7 +276,7 @@ main {
     }
 }
 
-form{
+form {
     width: 35%;
     display: flex;
     align-items: center;
@@ -284,7 +285,7 @@ form{
     gap: 25px;
 }
 
-.inputs{
+.inputs {
     width: 116%;
     height: 6vh;
     border-radius: 15px;
@@ -294,7 +295,7 @@ form{
 }
 
 .button-submit {
-    width: 160px;
+    width: 182px;
     height: 6vh;
     background-color: var(--vermelhao);
     color: white;
@@ -303,6 +304,6 @@ form{
     font-size: 18px;
     font-family: var(--fonte-poppins);
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.5s ease;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
 }

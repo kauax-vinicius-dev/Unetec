@@ -124,7 +124,7 @@ nav {
     font-size: 17px;
     font-family: var(--fonte-poppins);
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.5s ease;
     box-shadow: 4px 4px 10px var(--sombra);
     margin-top: 10px;
 }
