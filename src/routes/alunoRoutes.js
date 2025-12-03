@@ -6,7 +6,7 @@ import { viewsAlunoController } from "../controllers/alunoControllers/viewsAluno
 import { CardapioAlunoController } from "../controllers/alunoControllers/CardapioAlunoController.js";
 import { ConfigUserController } from "../controllers/alunoControllers/ConfigUserController.js";
 import { ChatUserController } from "../controllers/alunoControllers/ChatUserController.js";
-import { VisitaTecUser } from "../controllers/alunoControllers/VisitacTecController.js";
+import { VisitaTecUser } from "../controllers/alunoControllers/VisitaTecController.js";
 
 const alunoRoutes = Router();
 

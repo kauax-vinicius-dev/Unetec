@@ -6,7 +6,7 @@ import { viewsAdminController } from "../controllers/adminControllers/viewsAdmin
 import { CardapioAdminController } from "../controllers/adminControllers/CardapioAdminController.js";
 import { ConfigAdminController } from "../controllers/adminControllers/ConfigAdminController.js";
 import { ChatAdminController } from "../controllers/adminControllers/ChatAdminController.js";
-import { VisitaTecAdminController } from "../controllers/adminControllers/visitaTecController.js";
+import { VisitaTecAdminController } from "../controllers/adminControllers/VisitaTecController.js";
 
 const adminRoutes = Router();
 
